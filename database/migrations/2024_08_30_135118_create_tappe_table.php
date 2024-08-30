@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('tappe', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('giornata_id')->constrained()->onDelete('cascade');
+            $table->foreignId('giornata_id')->constrained('giornate')->onDelete('cascade');
             $table->string('titolo');
             $table->text('descrizione')->nullable();
             $table->string('immagine')->nullable();

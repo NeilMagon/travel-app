@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('valutazioni', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('tappa_id')->constrained()->onDelete('cascade');
+            $table->foreignId('tappa_id')->constrained('tappe')->onDelete('cascade');
             $table->integer('valutazione')->unsigned()->default(0);
             $table->timestamps();
         });
